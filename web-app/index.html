@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect Wallet</title>
+</head>
+<body>
+  <h1>Connect Your Wallet</h1>
+  <button id="connect-wallet">Connect MetaMask</button>
+
+  <script>
+    document.getElementById('connect-wallet').addEventListener('click', async () => {
+      if (typeof window.ethereum !== 'undefined') {
+        try {
+          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+          const walletAddress = accounts[0];
+
+          // Redirect back to the desktop app with wallet info
+          window.location.href = `x-dexfuel-myapp://wallet-connected?address=${walletAddress}`;
+        } catch (error) {
+          console.error('Error connecting wallet:', error);
+          alert('Failed to connect wallet.');
+        }
+      } else {
+        alert('MetaMask is not installed in your browser!');
+      }
+    });
+  </script>
+</body>
+</html>
