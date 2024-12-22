@@ -1,5 +1,5 @@
 message: appkit-lab.reown.com wants you to sign in with your Ethereum account:
-0x7608D9982E2E82120B0749C526e883E776D5e8bd
+0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 Please sign with your account
 
